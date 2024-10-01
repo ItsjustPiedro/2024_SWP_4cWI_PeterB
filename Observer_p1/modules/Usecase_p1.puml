@@ -1,0 +1,25 @@
+@startuml usecase_part_1
+
+left to right direction
+actor NewsAgency as Agency << System >>
+actor NewsChannel as Channel << System >>
+
+rectangle "News Delivery" {
+
+    (broadcast news to NewsChannels) as broadcast
+    (is notified about news) as notify
+    (unsubscribe from NewsAgency) as unsubscribe
+    (subscribes to newsAgency) as subscribe
+
+}
+
+Channel --> subscribe
+Channel --> unsubscribe
+Channel --> notify
+
+Agency --> broadcast
+
+
+
+
+@enduml
