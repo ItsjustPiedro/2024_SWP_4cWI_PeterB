@@ -9,6 +9,11 @@ public class NewsChannel {
         this.name = name;
     }
 
+    public void notify(String news)
+    {
+        System.out.println(this + " is notified of " + news);
+    }
+
     @Override
     public String toString() {
         return name;

@@ -16,12 +16,25 @@ public class NewsAgency {
 
     }
 
-    public void registerNewsChannel(NewsChannel newsChannel) {
-
-
-
+    public void subscribe(NewsChannel channel)
+    {
+        System.out.println(channel + " has subscribed to " + this);
+        this.newsChannelList.add(channel);
     }
-    public void broadcastMessage(String message) {
+
+    public void unsubscribe(NewsChannel channel)
+    {
+        System.out.println(channel + " has unsubscribed to " + this);
+        this.newsChannelList.remove(channel);
+    }
+
+    public void broadcast(String news) {
+
+        System.out.println(this + " broadcasts " + news);
+        for (NewsChannel channel : newsChannelList)
+        {
+            channel.notify(news);
+        }
 
 
     }

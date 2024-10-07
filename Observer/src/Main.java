@@ -7,13 +7,29 @@ public class Main {
 
     public static void main(String[] args){
 
-        var newAgency = new NewsAgency("AUA");
 
-        var newsChannel = new NewsChannel("ORF.at");
+        //create new agencies
+        var apa = new NewsAgency("APA");
+        var reuters = new NewsAgency("reuters");
 
-        System.out.println("New NewsAgency: " + newAgency + " has been created" );
 
-        System.out.println("New NewsChannel: " + newsChannel + " has been created" );
+        // create news channel
+        var orf = new NewsChannel("ORF.at");
+        var nzz = new NewsChannel("nzz.ch");
+        var mytimes = new NewsChannel("mytimes.com");
+
+        //subscribe to apa
+        apa.subscribe(orf);
+        apa.subscribe(nzz);
+
+        //subscribe to reuters
+        reuters.subscribe(mytimes);
+
+        //broadcast news
+
+        apa.broadcast("Auf der Suche nach der nächsten Regierung");
+        reuters.broadcast("Neues Gesetz für den Straßenbverkehr erlassen");
+
 
     }
 
